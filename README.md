@@ -4,7 +4,7 @@ This project was originally designed to complete an assignment for the course, A
 
 This project implements the lifting scheme for Daubechies 4 wavelet using Java Swing, which allows user to adjust the speed and pause the animation.
 
-![](.\imgs\gui.png)
+![](./imgs/gui.png)
 
 Using the vertical box layout, the main layout of the panel contains two parts:
 
@@ -19,4 +19,4 @@ For further update, visit my github page [holdenzlL/Wavelet_String_Toy_JAVA_Swin
 
 ## GIF demo
 
-![demo](.\imgs\demo.gif)
+![demo](./imgs/demo.gif)
