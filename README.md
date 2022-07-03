@@ -21,8 +21,8 @@ For further update, visit my github page [holdenzlL/Wavelet_String_Toy_JAVA_Swin
 
 ## Principle
 
-![shift](.\imgs\shift.png)
+<img src=".\imgs\shift.png" alt="shift" style="zoom: 67%;" />
 
 ## Algorithm
 
-![shift2](.\imgs\shift2.png)
+<img src=".\imgs\shift2.png" alt="shift2" style="zoom: 67%;" />
