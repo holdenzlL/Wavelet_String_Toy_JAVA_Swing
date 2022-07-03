@@ -21,8 +21,8 @@ For further update, visit my github page [holdenzlL/Wavelet_String_Toy_JAVA_Swin
 
 ## Principle
 
-![shift](.\imgs\shift.png)
+![shift](./imgs/shift.png)
 
 ## Algorithm
 
-![shift2](.\imgs\shift2.png)
+![shift2](./imgs/shift2.png)
