@@ -13,12 +13,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03dae954-8cae-444d-aa61-fa3a34a7208e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/DrawArrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/Arrow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/pojo/Orientation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/pojo/Arrowhead.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/pojo/Linestyle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/MyPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gui/MyPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/Arrow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/Arrow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/pojo/Orientation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow$DrawPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow$DrawPanel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/Arrow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/arrow/pojo/Orientation.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -47,20 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Documents/GitHub/Wavelet_String_Toy_JAVA_Swing&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "extract.method.default.visibility": "private",
+    "last_opened_file_path": "D:/Documents/GitHub/Wavelet_String_Toy_JAVA_Swing",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Arrow">
     <configuration name="Arrow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.gui.arrow.Arrow" />
@@ -123,7 +127,7 @@
       <workItem from="1656769061335" duration="16661000" />
       <workItem from="1656788217233" duration="87000" />
       <workItem from="1656831753372" duration="11202000" />
-      <workItem from="1656858552144" duration="14166000" />
+      <workItem from="1656858552144" duration="18059000" />
     </task>
     <servers />
   </component>
