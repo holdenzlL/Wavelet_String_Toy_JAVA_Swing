@@ -13,30 +13,30 @@ import java.util.Objects;
  * &#064;Version  Prototype
  */
 public class MyPanel extends JPanel {
-    private final int _SLIDER_MIN = 200;
-    private final int _SLIDER_MAX = 500;
-    private int _SLIDER_INITIAL = 350;
+
     private int number = 0;
 
     private final Timer timer;
     private JLabel counter;
     private MyToggleButton myToggleButton;
-    private JButton buttonLast;
-    private JButton buttonNext;
     Wavelet wavelet;
     private final ArrayBlock arrayBlock_sigs;
     private final ArrayBlock arrayBlock_interscalings;
     private final ArrayBlock arrayBlock_interdetails;
     private final ArrayBlock arrayBlock_scalings;
     private final ArrayBlock arrayBlock_details;
-    private ArrayBlock arrayBlock_reScalings;
-    private ArrayBlock arrayBlock_reDetails;
-    private ArrayBlock arrayBlock_reSigs;
+    private final ArrayBlock arrayBlock_reScalings;
+    private final ArrayBlock arrayBlock_reDetails;
+    private final ArrayBlock arrayBlock_reSigs;
 
     /**
      * Generate the Panel for displaying wavelet lifting procedure.
      */
     MyPanel(){
+
+        final int _SLIDER_MIN = 200;
+        final int _SLIDER_MAX = 500;
+        int _SLIDER_INITIAL = 350;
 
         // a timer
         timer = new Timer(_SLIDER_INITIAL,(e)->{
@@ -48,13 +48,9 @@ public class MyPanel extends JPanel {
                myToggleButton.setSelected(false);
                myToggleButton.setText("Reset");
                number=0;
-               counter.setText(String.valueOf(number));
-                drawArrays();
             }
-            else {
-                counter.setText(String.valueOf(number));
-                drawArrays();
-            }
+            counter.setText(String.valueOf(number));
+            drawArrays();
         });
 
         wavelet = new Wavelet(new double[]{1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8});
@@ -75,8 +71,8 @@ public class MyPanel extends JPanel {
         hBox_down.add(myToggleButton);
         hBox_down.add(Box.createHorizontalGlue());
 
-        buttonLast = new JButton("Last Step");
-        buttonNext = new JButton("Next Step");
+        JButton buttonLast = new JButton("Last Step");
+        JButton buttonNext = new JButton("Next Step");
         buttonLast.addActionListener(e -> {
             //stop the timer and toggle the button
             timer.stop();

@@ -13,13 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="03dae954-8cae-444d-aa61-fa3a34a7208e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/DrawArrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/Arrow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/arrow/pojo/Orientation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/ArrayBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/ArrayBlock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/MyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/MyPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/MyPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/Wavelet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/Wavelet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/gui/pojo/GridsLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/gui/pojo/GridsLinkedList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/example/gui/MyPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/example/gui/MyPanel.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +28,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -47,21 +47,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Documents/GitHub/Wavelet_String_Toy_JAVA_Swing",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Errors"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Documents/GitHub/Wavelet_String_Toy_JAVA_Swing&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.Arrow">
+    <configuration name="Arrow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.gui.arrow.Arrow" />
+      <module name="Wavelet_String_Toy_JAVA_Swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.gui.arrow.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DrawArrow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.gui.DrawArrow" />
+      <module name="Wavelet_String_Toy_JAVA_Swing" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="Wavelet_String_Toy_JAVA_Swing" />
@@ -77,7 +103,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Arrow" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.DrawArrow" />
       </list>
     </recent_temporary>
   </component>
@@ -95,6 +123,7 @@
       <workItem from="1656769061335" duration="16661000" />
       <workItem from="1656788217233" duration="87000" />
       <workItem from="1656831753372" duration="11202000" />
+      <workItem from="1656858552144" duration="14166000" />
     </task>
     <servers />
   </component>
