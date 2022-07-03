@@ -20,7 +20,7 @@ public class MyFrame extends JFrame {
         super(title);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setMinimumSize(new Dimension(1000,380));
+        this.setMinimumSize(new Dimension(1200,600));
 
         this.setContentPane(new MyPanel());
 

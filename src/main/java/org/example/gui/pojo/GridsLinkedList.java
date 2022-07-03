@@ -13,13 +13,16 @@ import java.util.LinkedList;
  */
 @Data
 public class GridsLinkedList {
-    int N;  // signal length
-    int index; // recent operated index
-    LinkedList<DataGrids> sigs;
-    LinkedList<DataGrids> interDetails;
-    LinkedList<DataGrids> interScalings;
-    LinkedList<DataGrids> details;
-    LinkedList<DataGrids> scalings;
+    private int N;  // signal length
+    private int index; // recent operated index
+    private LinkedList<DataGrids> sigs;
+    private LinkedList<DataGrids> interDetails;
+    private LinkedList<DataGrids> interScalings;
+    private LinkedList<DataGrids> details;
+    private LinkedList<DataGrids> scalings;
+    LinkedList<DataGrids> re_interDetails;
+    LinkedList<DataGrids> re_interScalings;
+    LinkedList<DataGrids> re_sigs;
 
     public GridsLinkedList(int N){
         this.N = N;
@@ -28,6 +31,9 @@ public class GridsLinkedList {
         interScalings = new LinkedList<>();
         details = new LinkedList<>();
         scalings = new LinkedList<>();
+        re_interDetails = new LinkedList<>();
+        re_interScalings = new LinkedList<>();
+        re_sigs = new LinkedList<>();
     }
     public void addEntry(){
         DataGrids sigs_tmp = new DataGrids();
@@ -35,21 +41,30 @@ public class GridsLinkedList {
         DataGrids interDetails_tmp = new DataGrids();
         DataGrids details_tmp = new DataGrids();
         DataGrids scalings_tmp = new DataGrids();
+        DataGrids re_interDetails_tmp = new DataGrids();
+        DataGrids re_interScalings_tmp = new DataGrids();
+        DataGrids re_sigs_tmp = new DataGrids();
 
         sigs_tmp.setDataGrids(new DataGrid[N]);
         interDetails_tmp.setDataGrids(new DataGrid[N/2]);
         interScalings_tmp.setDataGrids(new DataGrid[N/2]);
         details_tmp.setDataGrids(new DataGrid[N/2]);
         scalings_tmp.setDataGrids(new DataGrid[N/2]);
+        re_interDetails_tmp.setDataGrids(new DataGrid[N/2]);
+        re_interScalings_tmp.setDataGrids(new DataGrid[N/2]);
+        re_sigs_tmp.setDataGrids(new DataGrid[N]);
 
         for (int i = 0; i < N; i++) {
             sigs_tmp.getDataGrids()[i] = new DataGrid();
+            re_sigs_tmp.getDataGrids()[i] = new DataGrid();
             if(i<N/2)
             {
                 interDetails_tmp.getDataGrids()[i] = new DataGrid();
                 interScalings_tmp.getDataGrids()[i] = new DataGrid();
                 details_tmp.getDataGrids()[i] = new DataGrid();
                 scalings_tmp.getDataGrids()[i] = new DataGrid();
+                re_interDetails_tmp.getDataGrids()[i] = new DataGrid();
+                re_interScalings_tmp.getDataGrids()[i] = new DataGrid();
             }
         }
         sigs.add(sigs_tmp);
@@ -57,6 +72,9 @@ public class GridsLinkedList {
         interScalings.add(interScalings_tmp);
         details.add(details_tmp);
         scalings.add(scalings_tmp);
+        re_sigs.add(re_sigs_tmp);
+        re_interDetails.add(re_interDetails_tmp);
+        re_interScalings.add(re_interScalings_tmp);
 
         index = sigs.indexOf(sigs.getLast());
     }
@@ -91,6 +109,24 @@ public class GridsLinkedList {
             this.getScalings().get(this.index).getDataGrids()[index].setAddressed(true);
         }
     }
+    public void address_RE_SigElement(int[] indexList){
+        for (int index:
+                indexList) {
+            this.getRe_sigs().get(this.index).getDataGrids()[index].setAddressed(true);
+        }
+    }
+    public void address_RE_InterDetailsElement(int[] indexList){
+        for (int index:
+                indexList) {
+            this.getRe_interDetails().get(this.index).getDataGrids()[index].setAddressed(true);
+        }
+    }
+    public void address_RE_InterScalingsElement(int[] indexList){
+        for (int index:
+                indexList) {
+            this.getRe_interScalings().get(this.index).getDataGrids()[index].setAddressed(true);
+        }
+    }
     public void addressSigElement(int index){
         this.getSigs().get(this.index).getDataGrids()[index].setAddressed(true);
     }
@@ -105,6 +141,15 @@ public class GridsLinkedList {
     }
     public void addressScalingsElement(int index){
         this.getScalings().get(this.index).getDataGrids()[index].setAddressed(true);
+    }
+    public void address_RE_SigElement(int index){
+        this.getRe_sigs().get(this.index).getDataGrids()[index].setAddressed(true);
+    }
+    public void address_RE_InterDetailsElement(int index){
+        this.getRe_interDetails().get(this.index).getDataGrids()[index].setAddressed(true);
+    }
+    public void address_RE_InterScalingsElement(int index){
+        this.getRe_interScalings().get(this.index).getDataGrids()[index].setAddressed(true);
     }
     public void storeData_2inter(double[] sig, double[] details, double[] scalings){
         for (int i = 0; i < N; i++) {
@@ -123,6 +168,82 @@ public class GridsLinkedList {
                 double detail = this.getDetails().get(this.index-1).getDataGrids()[i].getData();
                 this.getScalings().get(this.index).getDataGrids()[i].setData(scaling);
                 this.getDetails().get(this.index).getDataGrids()[i].setData(detail);
+            }
+        }
+    }
+    public void storeData_RE_2inter_detail(double[] sigSaved ,double[] scalingSaved, double[] detailSaved,double[] sig, double[] scaling, double[] detail, int detail_index){
+
+        for (int i = 0; i < N; i++) {
+            // copy and save the old value
+            this.getSigs().get(this.index).getDataGrids()[i].setData(sigSaved[i]);
+
+            //store the new value
+            this.getRe_sigs().get(this.index).getDataGrids()[i].setData(sig[i]);
+
+            if(i<N/2) {
+                // copy and save the old value
+                this.getInterScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+                this.getInterDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+
+                //store the new value
+                double re_scaling = this.getRe_interScalings().get(this.index-1).getDataGrids()[i].getData();
+                this.getRe_interScalings().get(this.index).getDataGrids()[i].setData(re_scaling);
+                if(i>detail_index-1)
+                {
+                    this.getRe_interDetails().get(this.index).getDataGrids()[i].setData(detail[i]);
+                }
+            }
+        }
+    }
+    public void storeData_RE_2inter_scaling(double[] sigSaved ,double[] scalingSaved, double[] detailSaved,double[] sig, double[] scaling, double[] detail, int scaling_index){
+
+        for (int i = 0; i < N; i++) {
+            // copy and save the old value
+            this.getSigs().get(this.index).getDataGrids()[i].setData(sigSaved[i]);
+
+            //store the new value
+            this.getRe_sigs().get(this.index).getDataGrids()[i].setData(sig[i]);
+
+            if(i<N/2) {
+                // copy and save the old value
+                this.getInterScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+                this.getInterDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+
+                //store the new value
+                double re_detail = this.getRe_interDetails().get(this.index-1).getDataGrids()[i].getData();
+                this.getRe_interDetails().get(this.index).getDataGrids()[i].setData(re_detail);
+                if(i>scaling_index-1)
+                {
+                    this.getRe_interScalings().get(this.index).getDataGrids()[i].setData(scaling[i]);
+                }
+            }
+        }
+    }
+    public void storeData_RE_2sig(double[] sigSaved ,double[] scalingSaved, double[] detailSaved,double[] sig){
+
+        for (int i = 0; i < N; i++) {
+            // copy and save the old value
+            this.getSigs().get(this.index).getDataGrids()[i].setData(sigSaved[i]);
+
+            //store the new value
+            this.getRe_sigs().get(this.index).getDataGrids()[i].setData(sig[i]);
+
+            if(i<N/2) {
+                // copy and save the old value
+                this.getInterScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+                this.getInterDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getDetails().get(this.index).getDataGrids()[i].setData(detailSaved[i]);
+                this.getScalings().get(this.index).getDataGrids()[i].setData(scalingSaved[i]);
+
+                //store the new value
+                double re_detail = this.getRe_interDetails().get(this.index-1).getDataGrids()[i].getData();
+                double re_scaling = this.getRe_interScalings().get(this.index-1).getDataGrids()[i].getData();
+                this.getRe_interScalings().get(this.index).getDataGrids()[i].setData(re_scaling);
+                this.getRe_interDetails().get(this.index).getDataGrids()[i].setData(re_detail);
             }
         }
     }
@@ -171,28 +292,6 @@ public class GridsLinkedList {
                 double interdetail = this.getInterDetails().get(this.index-1).getDataGrids()[i].getData();
                 this.getDetails().get(this.index).getDataGrids()[i].setData(detail);
                 this.getInterDetails().get(this.index).getDataGrids()[i].setData(interdetail);
-            }
-        }
-    }
-
-    @Deprecated
-    public void storeData_2final(double[] sig, double[] details, double[] scalings){
-        for (int i = 0; i < N; i++) {
-            this.getSigs().get(this.index).getDataGrids()[i].setData(sig[i]);
-            if(i<N/2)
-            {
-                this.getScalings().get(this.index).getDataGrids()[i].setData(scalings[i]);
-                this.getDetails().get(this.index).getDataGrids()[i].setData(details[i]);
-            }
-        }
-        // for the inter, copy previous
-        if(this.index > 0)
-        {
-            for (int i = 0; i < N/2; i++) {
-                double scaling = this.getInterScalings().get(this.index-1).getDataGrids()[i].getData();
-                double detail = this.getInterDetails().get(this.index-1).getDataGrids()[i].getData();
-                this.getInterScalings().get(this.index).getDataGrids()[i].setData(scaling);
-                this.getInterDetails().get(this.index).getDataGrids()[i].setData(detail);
             }
         }
     }

@@ -24,7 +24,7 @@ public class ArrayBlock extends JPanel {
 
         this.setLayout(new GridLayout(1, N));
         for (int i = 0; i < N; i++) {
-            this.add(new ColorLabel(String.valueOf(input.getDataGrids()[i].getData()),input.getDataGrids()[i].isAddressed()?Color.PINK:Color.white));
+            this.add(new ColorLabel(String.valueOf((float) Math.round(input.getDataGrids()[i].getData())*100/100),input.getDataGrids()[i].isAddressed()?Color.PINK:Color.white));
         }
         this.setPreferredSize(new Dimension(55*N,55));
     }
@@ -37,7 +37,7 @@ public class ArrayBlock extends JPanel {
         final int N = input.getDataGrids().length;
         for (int i = 0; i < N; i++) {
             ColorLabel colorLabel = (ColorLabel) this.getComponent(i);
-            colorLabel.setText(String.valueOf(input.getDataGrids()[i].getData()));
+            colorLabel.setText(String.valueOf((float)Math.round(input.getDataGrids()[i].getData())*100/100));
             colorLabel.setBackground(input.getDataGrids()[i].isAddressed()?Color.PINK:Color.white);
         }
     }
