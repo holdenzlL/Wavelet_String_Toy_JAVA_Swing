@@ -18,3 +18,11 @@ For further update, visit my github page [holdenzlL/Wavelet_String_Toy_JAVA_Swin
 ## GIF demo
 
 ![demo](./imgs/demo.gif)
+
+## Principle
+
+![shift](.\imgs\shift.png)
+
+## Algorithm
+
+![shift2](.\imgs\shift2.png)
