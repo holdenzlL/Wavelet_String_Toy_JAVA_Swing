@@ -231,5 +231,4 @@ public class Arrow {
             arrow.draw((Graphics2D) g);
         }
     }
-
 }
